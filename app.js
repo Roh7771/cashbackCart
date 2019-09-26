@@ -1,17 +1,18 @@
 const purchaseAmount = 10000;
+const maxCashback = 3000;
 
 const purchaseCategory = 'usual';
 
-let cashback;
+let cashbackPercent;
 
 if (purchaseCategory === 'usual') {
-    cashback = 0.01;
+    cashbackPercent = 0.01;
 } else if (purchaseCategory === 'increased') {
-    cashback = 0.05;
-} else cashback = 0.3;
+    cashbackPercent = 0.05;
+} else cashbackPercent = 0.3;
 
-console.log(cashback);
+console.log(cashbackPercent);
 
-const returnedMoney = purchaseAmount * cashback > 3000 ? 3000 : purchaseAmount * cashback;
+const returnedCashback = purchaseAmount * cashbackPercent > maxCashback ? maxCashback : purchaseAmount * cashbackPercent;
 
-console.log(returnedMoney);
+console.log(returnedCashback);
